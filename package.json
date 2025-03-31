@@ -1,0 +1,24 @@
+{
+  "name": "umc-8th-web-haneul",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UMC-CAU/umc-8th-web-haneul.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/UMC-CAU/umc-8th-web-haneul/issues"
+  },
+  "homepage": "https://github.com/UMC-CAU/umc-8th-web-haneul#readme",
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^22.13.14",
+    "typescript": "^5.8.2"
+  }
+}
