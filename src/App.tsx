@@ -1,5 +1,6 @@
 import { useState } from "react";
 import TodoBlock from "./components/TodoBlock";
+import { useTodo } from "./context/TodoProvider";
 
 interface Todo {
   id: number;
@@ -9,7 +10,8 @@ interface Todo {
 
 const App = () => {
   const [todoInput, setTodoInput] = useState<string>("");
-  const [todos, setTodos] = useState<Todo[]>([]); // todos를 상태로 관리
+  // const [todos, setTodos] = useState<Todo[]>([]); // todos를 상태로 관리
+  const { todos, setTodos } = useTodo();
 
   const handleAddTodoClick = (): void => {
     const newTodo: Todo = {
