@@ -6,9 +6,11 @@ interface TodoBlock {
 
 const TodoBlock = ({ name, isCompleted, onButtonClick }: TodoBlock) => {
   return (
-    <div>
-      {name}
-      <button onClick={onButtonClick}>{isCompleted ? "삭제" : "완료"}</button>
+    <div className="render-container__item">
+      <span className="render-container__item-text">{name}</span>
+      <button className="render-container__item-button" onClick={onButtonClick}>
+        {isCompleted ? "삭제" : "완료"}
+      </button>
     </div>
   );
 };
