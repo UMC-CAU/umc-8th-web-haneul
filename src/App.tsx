@@ -4,6 +4,7 @@ import HomePage from "./pages/HomePage";
 import NotFound from "./pages/NotFound";
 import MoviesPage from "./pages/MoviesPage";
 import RootLayout from "./layout/RootLayout";
+import MoviesSpecificPage from "./pages/MoviesSpecificPage";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -21,12 +22,10 @@ const App = () => {
           path: "movies",
           element: <MoviesPage />,
           errorElement: <h1>Movie Error Element!</h1>,
-          children: [
-            {
-              path: ":movieId",
-              element: <MoviesPage />,
-            },
-          ],
+        },
+        {
+          path: "movies/:movieId",
+          element: <MoviesSpecificPage />,
         },
       ],
     },
