@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { Movie } from "../types/movie";
+import { Movie } from "../../types/movie";
 
 import { useNavigate } from "react-router-dom";
-import { useGetMovieData } from "../hooks/useGetMovieData";
-import LoadingSpinner from "../components/LoadingSpinner";
-import ErrorPage from "../components/ErrorPage";
+import { useGetMovieData } from "../../hooks/useGetMovieData";
+import LoadingSpinner from "../../components/LoadingSpinner";
+import ErrorPage from "../../components/ErrorPage";
 
 const MoviesPage = () => {
   const [language, setLanguage] = useState<string>("ko-KR");
@@ -93,7 +93,7 @@ const MovieBox = ({ movie }: { movie: Movie }) => {
   return (
     <div
       className="relative bg-white rounded-lg shadow-md group dark:bg-gray-800 dark:border-gray-700"
-      onClick={() => navigate(`/movies/${movie.id}`)}
+      onClick={() => navigate(`/w3/movies/${movie.id}`)}
     >
       <img
         src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}

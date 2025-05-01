@@ -1,0 +1,19 @@
+{
+  "React Component": {
+    "prefix": "rc",
+    "body": [
+      "import React from 'react';",
+      "",
+      "const ${TM_FILENAME_BASE} = () => {",
+      "  return (",
+      "    <>",
+      "      $1",
+      "    </>",
+      "  );",
+      "}",
+      "",
+      "export default ${TM_FILENAME_BASE};"
+    ],
+    "description": "React Functional Component"
+  }
+}

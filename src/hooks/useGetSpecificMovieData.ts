@@ -28,6 +28,7 @@ export const useGetSpecificMovieData = ({
     );
 
     return { ...res.data, ...credit.data };
+    // return { data: res.data, credit: credit.data };
   };
 
   return useQuery({

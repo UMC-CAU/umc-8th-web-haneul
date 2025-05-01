@@ -8,14 +8,14 @@ const Navbar = () => {
   return (
     <nav className="flex flex-row items-center justify-center gap-10 p-4 border-b-2 border-gray-300 dark:bg-red-700">
       <Link
-        to={"/"}
+        to={"/w3"}
         className="px-4 py-2 rounded-2xl border-1 bg-amber-200 hover:bg-amber-300"
       >
         홈 페이지로 이동
       </Link>
       <br />
       <Link
-        to="/movies"
+        to="/w3/movies"
         className="px-4 py-2 text-white bg-blue-500 rounded-2xl border-1 hover:bg-blue-600"
       >
         영화 목록 페이지로 이동

@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
-import { useGetSpecificMovieData } from "../hooks/useGetSpecificMovieData";
-import LoadingSpinner from "../components/LoadingSpinner";
-import ErrorPage from "../components/ErrorPage";
+import { useGetSpecificMovieData } from "../../hooks/useGetSpecificMovieData";
+import LoadingSpinner from "../../components/LoadingSpinner";
+import ErrorPage from "../../components/ErrorPage";
 
 const MoviesSpecificPage = () => {
   const { movieId } = useParams();
