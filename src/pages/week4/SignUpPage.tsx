@@ -1,7 +1,35 @@
 import { useState } from "react";
 import useForm from "../../hooks/useForm";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+
+const schema = z.object({
+  email: z.string().email("올바른 이메일 형식이 아닙니다."),
+  password: z
+    .string()
+    .min(8, "비밀번호는 최소 8자 이상이어야 합니다.")
+    .regex(/[a-zA-Z]/, "비밀번호는 영문자를 포함해야 합니다.")
+    .regex(/\d/, "비밀번호는 숫자를 포함해야 합니다.")
+    .regex(/[@$!%*?&]/, "비밀번호는 특수문자를 포함해야 합니다."),
+  name: z.string().min(1, { message: "이름을 입력해주세요." }),
+});
+
+type FormFields = z.infer<schema>;
 
 const SignUpPage = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormFields>({
+    defaultValues: {
+      name: "",
+      email: "",
+      password: "",
+    },
+    resolver: zodResolver(schema),
+  });
+
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [showPassword, setShowPassword] = useState<boolean>(false);
