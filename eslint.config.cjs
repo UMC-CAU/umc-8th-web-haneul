@@ -1,24 +1,24 @@
-import js from "@eslint/js";
-import globals from "globals";
-import tseslint from "typescript-eslint";
-import pluginReact from "eslint-plugin-react";
-import { defineConfig } from "eslint/config";
+import js from '@eslint/js';
+import globals from 'globals';
+import tseslint from 'typescript-eslint';
+import pluginReact from 'eslint-plugin-react';
+import { defineConfig } from 'eslint/config';
 
 export default defineConfig([
   // 1. ESLint 기본 추천 규칙 (JavaScript)
   {
-    files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
+    files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'],
     plugins: { js },
     rules: {
       // JSX 사용할 때 React import 안 해도 되도록 설정
-      "react/react-in-jsx-scope": "off",
+      'react/react-in-jsx-scope': 'off',
     },
     settings: {
       react: {
-        version: "detect", // 자동으로 React 버전 감지
+        version: 'detect', // 자동으로 React 버전 감지
       },
     },
-    extends: ["js/recommended"], // ESLint 코어 추천 규칙
+    extends: ['js/recommended'], // ESLint 코어 추천 규칙
     /*
       ✔️ 주요 규칙:
       - no-unused-vars: 사용되지 않은 변수 경고
@@ -32,7 +32,7 @@ export default defineConfig([
 
   // 2. 브라우저 전역 변수 설정
   {
-    files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
+    files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'],
     languageOptions: { globals: globals.browser },
     /*
       window, document, navigator 등 브라우저 전역 변수 자동 인식
@@ -59,7 +59,7 @@ export default defineConfig([
     rules: {
       ...pluginReact.configs.flat.recommended.rules,
       // JSX 사용할 때 React import 안 해도 되도록 설정
-      "react/react-in-jsx-scope": "off",
+      'react/react-in-jsx-scope': 'off',
     },
   },
   /*

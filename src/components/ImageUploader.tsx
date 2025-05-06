@@ -1,11 +1,11 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef } from 'react';
 
 const ImageUploader = ({ onChange }: { onChange: (file: File) => void }) => {
   const imageInputRef = useRef<HTMLInputElement | null>(null);
   const previewImageRef = useRef<HTMLImageElement | null>(null);
 
   const defaultImage =
-    "https://static.vecteezy.com/system/resources/previews/020/765/399/non_2x/default-profile-account-unknown-icon-black-silhouette-free-vector.jpg"; // 기본 이미지 URL
+    'https://static.vecteezy.com/system/resources/previews/020/765/399/non_2x/default-profile-account-unknown-icon-black-silhouette-free-vector.jpg'; // 기본 이미지 URL
 
   useEffect(() => {
     if (previewImageRef.current) {
